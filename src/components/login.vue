@@ -29,8 +29,8 @@ export default {
     return {
       // 登录表单的数据对象；
       loginForm: {
-        username: 'Alacazar',
-        password: '123'
+        username: 'admin',
+        password: '123456'
       },
       rules: {
         //   验证用户名
@@ -41,7 +41,7 @@ export default {
         //   验证密码
         password: [
           { required: true, message: '请输入密码', trigger: 'blur' },
-          { min: 3, max: 15, message: '长度在 3 到 15 个字符', trigger: 'blur' }
+          { min: 6, max: 15, message: '长度在 6 到 15 个字符', trigger: 'blur' }
         ]
       }
     }
@@ -56,9 +56,10 @@ export default {
         if (!valid) {
           return null
         }
-        this.$router.push('/home')
+        // this.$router.push('/home')
         // 向服务器提交用户登录数据，验证；***
-        const { data: res } = await this.$http.post('login', this.form)
+        const { data: res } = await this.$http.post('login', this.loginForm)
+        console.log(res)
         if (res.meta.status !== 200) return this.$message.error('登录失败')
         this.$message.success('登录成功')
         window.sessionStorage.setItem('Token', res.data.token)
