@@ -94,7 +94,7 @@ export default {
       queryInfo: {
         query: '',
         pagenum: 1,
-        pagesize: 10
+        pagesize: 9
       },
       total: 0,
       orderlist: [],
