@@ -1,8 +1,8 @@
 <template>
     <div class="context"> 
-        <span class="welcome">
-            Welcome to this management system.
-        </span>
+        <strong class="welcome">
+            Welcome to this system ...
+        </strong>
     </div>
 </template>
 
@@ -19,7 +19,7 @@ export default {
     left: 30%;
     top: 50%;
     transform: translate(-50%,-50%);
-    font-size: 20px;
+    font-size: 30px;
 }
 .welcome{
     width: auto;
