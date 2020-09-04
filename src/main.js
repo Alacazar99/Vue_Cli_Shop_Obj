@@ -6,6 +6,10 @@ import './assets/css/global.css'
 
 import './plugins/element.js'
 
+import TreeTable from 'vue-table-with-tree-grid'
+
+// 导入富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
 // 导入axios
 import axios from 'axios'
 // 请求配置路径
@@ -20,6 +24,9 @@ axios.interceptors.request.use(config => {
 Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
+
+Vue.component('tree-table', TreeTable)
+// 将富文本编辑器，注册为全局可用的组件
 
 // 时间格式转换
 Vue.filter('dateFormat', function(originVal) {
