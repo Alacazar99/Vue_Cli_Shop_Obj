@@ -11,12 +11,15 @@ import reports from '../components/reports/report.vue'
 import goods from '../components/goods/goods.vue'
 import params from '../components/goods/params.vue'
 import categories from '../components/goods/categories.vue'
+import music from '../components/music/music.vue'
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
     { path: '/', redirect: '/login' },
     { path: '/login', component: Login },
+    { path: '/music', component: music },
+
     { path: '/home', component: Home ,children:[
       { path: '/' ,redirect: '/Welcome' },
       { path: '/Welcome', component: Welcome },
@@ -29,6 +32,7 @@ const router = new VueRouter({
       { path: '/params', component: params },
       { path: '/categories', component: categories }
     ]}
+    
   ]
 })
 

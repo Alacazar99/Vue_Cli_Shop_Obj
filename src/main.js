@@ -12,16 +12,20 @@ import TreeTable from 'vue-table-with-tree-grid'
 import VueQuillEditor from 'vue-quill-editor'
 // 导入axios
 import axios from 'axios'
+import axios1 from 'axios'
 // 请求配置路径
 axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1'
 
+// axios1.defaults.baseURL = '/apis'
  // axios请求拦截   
+
 axios.interceptors.request.use(config => {     
    // 为请求头对象，添加 Token 验证的 Authorization 字段     
    config.headers.Authorization = window.sessionStorage.getItem('Token') 
    return config 
 })
 Vue.prototype.$http = axios
+// Vue.prototype.$axios = axios1
 
 Vue.config.productionTip = false
 

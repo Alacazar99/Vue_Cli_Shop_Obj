@@ -3,8 +3,8 @@
     <!-- 头部区域 -->
     <el-header>
       <div>
-        <img src="../assets/logo.png" alt="">
-        <span>电商后台管理系统</span>
+        <img src="../assets/logo.png" alt="" @click="toMusic">
+        <span >电商后台管理系统</span>
       </div>
       <el-button type="info" @click="logout">退出</el-button>
     </el-header>
@@ -73,6 +73,10 @@ export default {
     logout() {
       window.sessionStorage.clear()
       this.$router.push('/login')
+    },
+    // 跳转至音乐模块；
+    toMusic(){
+      this.$router.push('/music')
     },
     // 获取所有的菜单
     async getMenuList() {
