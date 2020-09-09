@@ -28,7 +28,7 @@
         <el-table-column label="邮箱" prop="email"></el-table-column>
         <el-table-column label="联系方式" prop="mobile"></el-table-column>
         <el-table-column label="角色级别" prop="role_name"></el-table-column>
-        <el-table-column label="状态展示">
+        <el-table-column label="状态展示" width="80px">
           <template slot-scope="scope">
             <el-switch
               active-color="#13ce66"

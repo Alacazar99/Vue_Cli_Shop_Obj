@@ -21,18 +21,19 @@
           </el-row>
 
           <!-- 订单列表数据 -->
-          <el-table :data="queryInfo.musiclist" border stripe>
+          <!-- <el-table :data="queryInfo.musiclist" border stripe>
             <el-table-column type="index"></el-table-column>
-            <el-table-column label="单曲" prop="order_price"></el-table-column>
-            <el-table-column label="歌手" prop="order_price"></el-table-column>
-            <el-table-column label="专辑" prop="order_price"></el-table-column>
-            <el-table-column label="视频MV" prop="order_price"></el-table-column>
-            <el-table-column label="歌词" prop="order_price"></el-table-column>
-            <el-table-column label="歌单" prop="order_price"></el-table-column>
-            <el-table-column label="用户" prop="order_price"></el-table-column>
-          </el-table>
+            <el-table-column label="单曲" prop=""></el-table-column>
+            <el-table-column label="歌手" prop=""></el-table-column>
+            <el-table-column label="专辑" prop=""></el-table-column>
+            <el-table-column label="视频MV" prop=""></el-table-column>
+            <el-table-column label="歌词" prop=""></el-table-column>
+            <el-table-column label="歌单" prop=""></el-table-column>
+            <el-table-column label="用户" prop=""></el-table-column>
+          </el-table> -->
         </el-card>
       </el-tab-pane>
+      
       <el-tab-pane label="我的音乐">我的音乐</el-tab-pane>
       <el-tab-pane label="朋友">朋友</el-tab-pane>
       <el-tab-pane label="音乐人">音乐人</el-tab-pane>
@@ -56,9 +57,7 @@ export default {
         // 关键词
         query: "张杰",
         // 歌单列表
-        musiclist: [
-          order_price = ['GGG',"King"]
-        ],
+        musiclist: [],
       },
 
       musicurl: "",
@@ -78,11 +77,11 @@ export default {
     async searchMusic() {
       // this.$message.success("正在搜索中，请稍等...")
       // var that = this
-      const { data: res } = await this.$http.get("/api/search?keywords=" + this.queryInfo.query)
-      console.log(res)
-      if(res.meta.status != 200){
-        return  this.$message.error(res.meta.msg)
-      }
+      // const { data: res } = await this.$http.get("/api/search?keywords=" + this.queryInfo.query)
+      // console.log(res)
+      // if(res.meta.status != 200){
+      //   return  this.$message.error(res.meta.msg)
+      // }
       
       // .then(
       //   function (response) {

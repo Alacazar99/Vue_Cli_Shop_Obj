@@ -40,7 +40,7 @@
             {{scope.row.create_time | dateFormat}}
           </template>
         </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="操作" width="150px">
           <template>
             <el-tooltip effect="dark" content="修改地址" placement="top-end" :enterable="false">
             <el-button size="mini" type="primary" icon="el-icon-edit" @click="showBox"></el-button>

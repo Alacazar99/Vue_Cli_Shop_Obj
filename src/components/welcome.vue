@@ -1,7 +1,7 @@
 <template>
     <div class="context"> 
         <strong class="welcome">
-            Welcome to this system ...
+            Welcome to this system 
         </strong>
     </div>
 </template>
