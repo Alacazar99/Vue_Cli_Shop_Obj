@@ -3,7 +3,7 @@
     <!-- 头部区域 -->
     <el-header>
       <div>
-        <img src="../../assets/logo.png" alt />
+        <img src="../../assets/logo.png" alt @click="toHome" />
         <span>Buling音乐</span>
       </div>
       <el-button type="info" @click="toWelcome">退回</el-button>
@@ -21,22 +21,55 @@
           </el-row>
 
           <!-- 订单列表数据 -->
-          <!-- <el-table :data="queryInfo.musiclist" border stripe>
+          <el-table :data="queryInfo.musiclist" border stripe>
             <el-table-column type="index"></el-table-column>
-            <el-table-column label="单曲" prop=""></el-table-column>
-            <el-table-column label="歌手" prop=""></el-table-column>
-            <el-table-column label="专辑" prop=""></el-table-column>
-            <el-table-column label="视频MV" prop=""></el-table-column>
-            <el-table-column label="歌词" prop=""></el-table-column>
-            <el-table-column label="歌单" prop=""></el-table-column>
-            <el-table-column label="用户" prop=""></el-table-column>
-          </el-table> -->
+            <el-table-column label="单曲" prop></el-table-column>
+            <el-table-column label="歌手" prop></el-table-column>
+            <el-table-column label="专辑" prop></el-table-column>
+            <el-table-column label="视频MV" prop></el-table-column>
+            <el-table-column label="歌词" prop></el-table-column>
+            <el-table-column label="歌单" prop></el-table-column>
+            <el-table-column label="用户" prop></el-table-column>
+          </el-table>
         </el-card>
       </el-tab-pane>
-      
-      <el-tab-pane label="我的音乐">我的音乐</el-tab-pane>
-      <el-tab-pane label="朋友">朋友</el-tab-pane>
-      <el-tab-pane label="音乐人">音乐人</el-tab-pane>
+
+      <el-tab-pane label="我的音乐">
+        <el-card>
+          <el-row>
+            <el-col :span="8">
+              <!-- 搜索歌曲 -->
+              <el-input placeholder="您想要的歌,都在这里" v-model="queryInfo.query" clearable>
+                <el-button @click="searchMusic" slot="append" icon="el-icon-search"></el-button>
+              </el-input>
+            </el-col>
+          </el-row>
+        </el-card>
+      </el-tab-pane>
+      <el-tab-pane label="朋友">
+        <el-card>
+          <el-row>
+            <el-col :span="8">
+              <!-- 搜索歌曲 -->
+              <el-input placeholder="您想要的朋友,这里都有哦" v-model="friend" clearable>
+                <el-button @click="searchMusic" slot="append" icon="el-icon-search"></el-button>
+              </el-input>
+            </el-col>
+          </el-row>
+        </el-card>
+      </el-tab-pane>
+      <el-tab-pane label="音乐人">
+        <el-card>
+          <el-row>
+            <el-col :span="8">
+              <!-- 搜索音乐人 -->
+              <el-input placeholder="您想要的音乐人,这里都有哦" clearable>
+                <el-button @click="searchMusic" slot="append" icon="el-icon-search"></el-button>
+              </el-input>
+            </el-col>
+          </el-row>
+        </el-card>
+      </el-tab-pane>
     </el-tabs>
 
     <el-container class="home-container">
@@ -49,6 +82,7 @@
 
 <script>
 import axios from "axios"
+// import $ from 'jQuery'
 
 export default {
   data() {
@@ -59,7 +93,7 @@ export default {
         // 歌单列表
         musiclist: [],
       },
-
+      friend: "",
       musicurl: "",
       musicCover: "",
       hotComments: [],
@@ -73,16 +107,30 @@ export default {
       this.$router.push("/Welcome")
       console.log("页面跳转")
     },
+    toHome(){
+      this.$router.push('/Home')
+    },
     // 歌曲搜索；
     async searchMusic() {
       // this.$message.success("正在搜索中，请稍等...")
-      // var that = this
-      // const { data: res } = await this.$http.get("/api/search?keywords=" + this.queryInfo.query)
-      // console.log(res)
+      var that = this
+      const { data: res } = await this.$http.get(
+        "/api/search?keywords=" + this.queryInfo.query
+      )
+      console.log(res)
+
+      // $.ajax({
+      //   url:'https://autumnfish.cn/search?keywords='+ this.queryInfo.query,
+      //   type:'GET',
+      //   dataType: 'JSONP',
+      //   success:function(res){
+      //     console.log(res)
+      //   }
+      // })
+
       // if(res.meta.status != 200){
       //   return  this.$message.error(res.meta.msg)
       // }
-      
       // .then(
       //   function (response) {
       //     console.log(response.data);

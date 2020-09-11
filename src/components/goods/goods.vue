@@ -52,7 +52,7 @@ export default {
     return {
       // 查询参数对象
       queryInfo: {
-        query: '',
+        query: ' 海外',
         pagenum: 1,
         pagesize: 10
       },

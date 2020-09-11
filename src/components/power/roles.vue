@@ -14,7 +14,7 @@
       </el-row>
       <!-- 卡片视图区域 -->
       <el-table :data="roleslist" border stripe>
-        <!-- t拓展列 -->
+        <!-- 拓展列 -->
         <el-table-column type="expand">
           <template slot-scope="scope">
             <el-row

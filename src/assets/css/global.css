@@ -3,7 +3,7 @@ html,body,#app {
     height: 100%;
     margin: 0;
     padding: 0;
-    min-width: 924px;
+    min-width: 1112px;
 }
 .el-card, .el-table, .el-pagination{
     margin-top: 20px;
@@ -39,4 +39,6 @@ html,body,#app {
   .ql-editor {
     min-height: 300px;
   }
-  
+  .el-cascader-panel{
+    height: 200px;
+}

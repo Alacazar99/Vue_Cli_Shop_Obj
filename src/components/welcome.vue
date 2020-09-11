@@ -1,7 +1,7 @@
 <template>
     <div class="context"> 
         <strong class="welcome">
-            Welcome to this system 
+            <!-- Welcome to this System -->
         </strong>
     </div>
 </template>
@@ -24,5 +24,6 @@ export default {
 .welcome{
     width: auto;
     height: auto;
+    // font-size: 20px;
 }
 </style>

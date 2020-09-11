@@ -9,8 +9,21 @@
 
     <!-- 卡片视图区域 -->
     <el-card>
+       <el-table :data="series" border stripe>
+        <el-table-column type="index"></el-table-column>
+        <!-- 数据放反了 -->
+        <el-table-column label="2017-12-27" prop="data[0]"></el-table-column>
+        <el-table-column label="2017-12-28" prop="data[1]"></el-table-column>
+        <el-table-column label="2017-12-29" prop="data[2]"></el-table-column>
+        <el-table-column label="2017-12-30" prop="data[3]"></el-table-column>
+        <el-table-column label="2018-1-1" prop="data[4]"></el-table-column>
+       </el-table>
+       <!-- 设置间隔 -->
+       <br>   
       <!-- 2. 为ECharts准备一个具备大小（宽高）的Dom -->
-      <div id="main" style="width: 750px;height:400px;"></div>
+      <div id="main" style="width: 750px;height:400px;">
+
+      </div>
     </el-card>
   </div>
 </template>
@@ -23,10 +36,12 @@ import _ from 'lodash'
 export default {
   data() {
     return {
+
+      series: [],
       // 需要合并的数据
       options: {
         title: {
-          text: '用户来源'
+          text: '数据报表'
         },
         tooltip: {
           trigger: 'axis',
@@ -56,7 +71,9 @@ export default {
       }
     }
   },
-  created() {},
+  created() {
+    this.getseries()
+  },
   // 此时，页面上的元素，已经被渲染完毕了！
   async mounted() {
     // 3. 基于准备好的dom，初始化echarts实例
@@ -66,6 +83,8 @@ export default {
     if (res.meta.status !== 200) {
       return this.$message.error('获取折线图数据失败！')
     }
+    // console.log(res.data)
+    this.series = res.data.series
 
     // 4. 准备数据和配置项
     const result = _.merge(res.data, this.options)
@@ -73,7 +92,9 @@ export default {
     // 5. 展示数据
     myChart.setOption(result)
   },
-  methods: {}
+  methods: {
+    // getseries
+  }
 }
 </script>
 
