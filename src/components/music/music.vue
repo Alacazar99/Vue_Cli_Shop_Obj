@@ -82,14 +82,14 @@
 
 <script>
 import axios from "axios"
-// import $ from 'jQuery'
+import $ from 'jquery'
 
 export default {
   data() {
     return {
       queryInfo: {
         // 关键词
-        query: "张杰",
+        query: "zhangjie",
         // 歌单列表
         musiclist: [],
       },
@@ -112,18 +112,26 @@ export default {
     },
     // 歌曲搜索；
     async searchMusic() {
-      // this.$message.success("正在搜索中，请稍等...")
+      this.$message.success("正在搜索中，请稍等...")
       var that = this
       const { data: res } = await this.$http.get(
-        "/api/search?keywords=" + this.queryInfo.query
+        "music/search?keywords=" + this.queryInfo.query
       )
+
       console.log(res)
 
+      // axios.get("music/search?keywords=" + this.queryInfo.query).then(
+      //   response=>{
+      //     let res = response.data
+      //     // console.log(res)
+      //     // this.$message.waring(res.meta.msg)
+      //   }
+      // )
       // $.ajax({
-      //   url:'https://autumnfish.cn/search?keywords='+ this.queryInfo.query,
+      //   url:'/search?keywords='+ this.queryInfo.query,
       //   type:'GET',
-      //   dataType: 'JSONP',
-      //   success:function(res){
+      //   dataType: 'application/json',
+      //   success: function(res){
       //     console.log(res)
       //   }
       // })

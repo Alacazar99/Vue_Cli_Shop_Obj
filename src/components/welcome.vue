@@ -13,6 +13,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+
 .context{
     margin-left: 200px;
     position: absolute;
@@ -21,6 +22,7 @@ export default {
     transform: translate(-50%,-50%);
     font-size: 30px;
 }
+
 .welcome{
     width: auto;
     height: auto;

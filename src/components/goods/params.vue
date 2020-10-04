@@ -13,7 +13,7 @@
       <el-alert show-icon title="注意：只允许为第三级分类设置相关参数！" type="warning" :closable="false" clearable></el-alert>
 
       <!-- 选择商品分类区域 -->
-      <el-row class="cat_opt">
+      <el-row class = "cat_opt">
         <el-col>
           <span>选择商品分类：</span>
           <!-- 选择商品分类的级联选择框 -->
@@ -50,7 +50,7 @@
                   closable
                   @close="handleClose(i, scope.row)"
                 >{{item}}</el-tag>
-                <!-- 输入的文本框 -->
+                <!-- 输入的 文本框 -->
                 <el-input
                   class="input-new-tag"
                   v-if="scope.row.inputVisible"
@@ -90,6 +90,7 @@
             </el-table-column>
           </el-table>
         </el-tab-pane>
+
         <!-- 添加静态属性的面板 -->
         <el-tab-pane label="静态属性" name="only">
           <!-- 添加属性的按钮 -->
@@ -114,13 +115,15 @@
                 <!-- 输入的文本框 -->
                 <el-input
                   class="input-new-tag"
-                  v-if="scope.row.inputVisible"
-                  v-model="scope.row.inputValue"
-                  ref="saveTagInput"
-                  size="small"
+                  v-if= "scope.row.inputVisible"
+                  v-model= "scope.row.inputValue"
+                  ref = "saveTagInput"
+                  size = "small"
                   @keyup.enter.native="handleInputConfirm(scope.row)"
+
                   @blur="handleInputConfirm(scope.row)"
                 ></el-input>
+
                 <!-- 添加按钮 -->
                 <el-button
                   v-else
@@ -182,6 +185,7 @@
     >
       <!-- 添加参数的对话框 -->
       <el-form :model="editForm" :rules="editFormRules" ref="editFormRef" label-width="100px">
+        
         <el-form-item :label="titleText" prop="attr_name">
           <el-input v-model="editForm.attr_name"></el-input>
         </el-form-item>
@@ -253,6 +257,7 @@ export default {
 
       console.log(this.catelist)
     },
+
     // 级联选择框选中项变化，会触发这个函数
     handleChange() {
       this.getParamsData()

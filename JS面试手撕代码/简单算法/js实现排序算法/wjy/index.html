@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>WJY，考研加油吖</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body onload="Demo()" class="bg">
+
+
+    <div class="love">
+        <marquee class="Lover" behavior="scroll">
+
+            <span class='color-span'>♥</span>
+            <span class='color'>王佳叶,考研加油吖</span>
+            <span class='color-span'>♥</span>
+            <span class='Lover-span'></span>
+        </marquee>
+    </div>
+    <div class="msgs">
+        <marquee class="msg" scrolldelay="1.8" behavior="scroll" Direction='up'>
+
+        
+            <p>
+                <span class='color-span3'>♥</span>
+                王佳叶
+                <span class='color-span3'>♥</span>
+            </p>
+            <p>
+                <span class='color-span4'>♥</span>
+                好久不见，好想你
+                <span class='color-span4'>♥</span>
+            </p>
+            <p>
+                <span class='color-span6'>♥</span>
+                想和你聊天
+                <span class='color-span6'>♥</span>
+            </p>
+            <p>
+                <span class='color-span7'>♥</span>
+                但是
+                <span class='color-span7'>♥</span>
+            </p>
+            <p>
+                <span class='color-span2'>♥</span>
+                又不知道从何说起
+                <span class='color-span2'>♥</span>
+            </p>
+            <p>
+                <span class='color-span3'>♥</span>
+                在我心里,你
+                <span class='color-span3'>♥</span>
+            </p>
+            <p>
+                <span class='color-span1'>♥</span>
+                也太漂亮了叭
+                <span class='color-span1'>♥</span>
+            </p>
+            <p>
+                <span class='color-span4'>♥</span>
+                独立 傲娇 美美哒
+                <span class='color-span4'>♥</span>
+            <p>
+                <span class='color-span3'>♥</span>
+                简直了，宝藏女孩
+                <span class='color-span3'>♥</span>
+            </p>
+
+            <p>
+                <span class='color-span6'>♥</span>
+                有时候感觉，你成熟
+                <span class='color-span6'>♥</span>
+            </p>
+            <p>
+                <span class='color-span5'>♥</span>
+                有时候又发现，你
+                <span class='color-span5'>♥</span>
+            </p>
+            <p>
+                <span class='color-span3'>♥</span>
+                满满的 少女心
+                <span class='color-span3'>♥</span>
+            </p>
+            <p>
+                <span class='color-span'>♥</span>
+                ...
+                <span class='color-span'>♥</span>
+            </p>
+            <p>
+                <span class='color-span'>♥</span>
+                ...
+                <span class='color-span'>♥</span>
+            </p>
+
+            <p>
+                <span class='color-span2'>♥</span>
+                你知道嘛
+                <span class='color-span2'>♥</span>
+            </p>
+            <p>
+                <span class='color-span5'>♥</span>
+                我感觉会，喜欢你
+                <span class='color-span5'>♥</span>
+            </p>
+            <p>
+                <span class='color-span1'>♥</span>
+                好久好久嗷
+                <span class='color-span1'>♥</span>
+            </p>
+            <p>
+                <span class='color-span4'>♥</span>
+                看着你的微信头像
+                <span class='color-span4'>♥</span>
+            </p>
+            <p>
+                <span class='color-span7'>♥</span>
+                就想和你谈恋爱哇
+                <span class='color-span7'>♥</span>
+            </p>
+            <p>
+                <span class='color-span2'>♥</span>
+                
+                <span class='color-span2'>♥</span>
+            </p>
+
+        </marquee>
+    </div>
+</body>
+
+<script src="js/Bubbles.js"></script>
+<!-- <script src="js/bg.js"></script> -->
+<script type="text/javascript">
+    var MAX = 5;
+    var i = 2;
+    function Demo() {
+        CreateBubble();
+        if (++i < MAX) setTimeout(Demo, 3000);
+    }
+
+    // snowStorm.snowColor = 'pink'; //雪花的颜色
+    // snowStorm.flakesMaxActive = 100; //雪花的数量
+    // snowStorm.excludeMobile = false; //ture让iPhone等支持js的手机也能看到雪花
+
+</script>
+<script type="text/javascript">
+
+    var btn = document.querySelector('.love');
+    var msg = document.querySelector('.msg');
+    var time = 6;
+    function sleep(delay) {
+        var start = (new Date()).getTime();
+        while ((new Date()).getTime() - start < delay) {
+            continue;
+        }
+    }
+    btn.addEventListener('touchstart', function () {
+        // console.log('aaaa');
+        timer = setTimeout(function () {
+            msg.style.behavior = "scroll";
+            msg.style.Direction = 'up'
+            sleep(2000);
+            msg.style.display = 'block';
+        }, 0)
+    });
+    sleep(500);
+    msg.style.display = 'block';
+</script>
+</body>
+
+</html>

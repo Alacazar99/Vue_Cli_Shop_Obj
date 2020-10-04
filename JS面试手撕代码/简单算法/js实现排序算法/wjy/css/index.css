@@ -1,0 +1,105 @@
+/* 
+html:hover {
+    cursor: pointer;
+} */
+[v-cloak]{
+    display: none;
+}
+.bg {
+    background-color: #444;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* top: 100px;
+    left: 50px; */
+    /* padding-left: 2%; */
+    height: 222px;
+    width: 222px;
+    opacity: .6;
+    position: absolute; 
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.msgs{
+    /* z-index: -1; */
+    opacity: 0.7;
+}
+/* .msgs::before{
+    content: '';
+   position: absolute;
+   left: 0; right: 0; top: 0; bottom: 0;
+   z-index: -1;
+   opacity: .6;
+} */
+.love {
+    position: fixed;
+    /* background-color: cadetblue; */
+    /* z-index: 1; */
+    width: 222px;
+    height: 222px;
+    text-align: center;
+    /* left: 50px; */
+}
+.Lover {
+    /* display: block; */
+    position: relative;
+    margin: 0 auto;
+    top: 75px;
+    width: 46%;
+    font-weight: bolder;
+    /* background-color: aquamarine; */
+    font-size: 36px;
+    color: #ffffffd2;
+    /* font-size: 36px; */
+    z-index: 15;
+    font-family: cursive ;
+    opacity: 0.9; 
+}
+.color{
+    color: #ddd;
+}
+.Lover-span{
+        color:  #000;
+}
+
+.msg{
+    display: none;
+    position: fixed;
+    text-align: center;
+    margin: center;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 100%;
+    /* background-color: lavender; */
+    font-weight: bolder;
+    font-size: 24px;
+    color: #ffffff;
+    /* z-index: auto; */
+}
+.color-span{
+    color: red;
+}
+.color-span1{
+    color: yellow;
+}
+.color-span2{
+    color: 	yellowgreen;
+}
+.color-span3{
+    color: pink;
+}
+.color-span4{
+    color: chartreuse;
+}
+.color-span5{
+    color: cyan;
+}
+.color-span6{
+    color: blanchedalmond;
+}
+.color-span7{
+    color: red;
+}

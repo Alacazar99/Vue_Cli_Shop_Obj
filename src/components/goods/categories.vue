@@ -165,12 +165,14 @@ export default {
       },
       // 父级分类的列表
       parentCateList: [],
+
       // 指定级联选择器的配置对象
       cascaderProps: {
         value: "cat_id",
         label: "cat_name",
         children: "children",
       },
+
       // 选中的父级分类的Id数组
       selectedKeys: [],
     }
@@ -212,6 +214,7 @@ export default {
       // 再展示出对话框
       this.addCateDialogVisible = true
     },
+    
     // 获取父级分类的数据列表
     async getParentCateList() {
       const { data: res } = await this.$http.get("categories", {

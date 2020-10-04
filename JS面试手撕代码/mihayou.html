@@ -1,0 +1,60 @@
+<template>
+    <div v-for='item in goodsList'>
+        <img src="">
+        <div class="name">{{item.name}}</div>
+        <button class="prices" @click='saveGoodsmeg'>{{item.prices}}</button>
+        <div class="flag">{{item.flag}}</div>
+    </div>
+</template>
+
+
+
+
+<script>
+    export default {
+        data() {
+            return {
+                goodsList: [],
+            }
+        },
+        methods: {
+            // 数据获取
+            getGoodlist() {
+                function ajax(opt) {
+                    var xhr = new XMLHttpRequest();
+                    xhr.open(opt.type, opt.url);
+                    xhr.send()
+                    xhr.onload = function () {
+                        opt.success(xhr.responseText)
+                    }
+                }
+                ajax({
+                    type: 'get',
+                    url: 'http://www.mihoyo.com/product/list',
+                    success: function (response) {
+                        this.goodsList = response.data
+                    }
+                })
+            },
+            // 按钮防抖
+            saveGoodsmeg() {
+                function debounce(func, wait) {
+                    let timeout = null;
+                    return function () {
+                        clearTimeout(timeout);
+                        timeout = setTimeout(() => {
+                            func.apply(this, arguments);
+                        }, wait);
+                    }
+                }
+                function func(){
+                    console.log('save msg...')
+                }
+                return debounce(func,1000)
+            },
+
+        }
+    }
+
+
+</script>

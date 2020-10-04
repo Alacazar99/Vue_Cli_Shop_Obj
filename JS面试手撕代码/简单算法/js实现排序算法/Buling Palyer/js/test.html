@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC >
+<html >
+<head>
+<title>站长天空-网页特效-背景特效-仿多彩变色泡泡屏幕保护效果</title>
+<meta http-equiv="content-type" content="text/html;charset=gb2312">
+<!--把下面代码加到<head>与</head>之间-->
+<style type="text/css">
+html,body{border:none;overflow:hidden;height:100%;}
+ .bg{
+     background-color: pink;
+     height:100%;
+     width: 100%;
+     opacity: .6;
+ }
+ .header{
+    height: 100px;
+    width: 100%;
+ }
+</style>
+</head>
+<body onload="Demo()" class="bg"> 
+    <div class="header" onload="Demo()">
+
+    </div>
+</body>
+<!--把<body>改成-->
+<!-- <body onload="Demo()"> -->
+<!--把下面代码加到<body>与</body>之间-->
+<script src="Bubbles.js"></script>
+
+<script type="text/javascript">
+var MAX=5;
+var i=0;
+function Demo(){
+	CreateBubble();
+	if(++i<MAX) setTimeout(Demo,1000);
+}
+</script>
+</body>
+</html>

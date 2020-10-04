@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Bling~Bling~</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="css/index.css"> -->
+    
+</head
+
+<body> 
+    <!-- <body onload="Demo()"> -->
+    <div class="header"></div>
+    <div class="wrap" v-cloak>
+        <!-- 播放器主体 -->
+        <div class="play_wrap" id='player'>
+            <div class="buju">
+                <div class="search_bar">
+                    <div class=" search-center">
+                        <div class="title">
+                            <span>
+                                Bling~Bling~
+                                <span class="glyphicon glyphicon-music"></span>
+                                
+                            </span>
+                        </div>
+                        <!-- <img src="" alt=""> -->
+                        <div class="itemtitle">
+                            
+                            <div></div>
+                        </div>
+                        <!-- 搜索歌曲 -->
+                        <div class="search-main">
+                            <input class="input" type="text" v-model='query' @keyup.enter='searchMusic' placeholder="您想要的,这里都有哦" title='您想要的,这里都有哦'>
+                            <button @click='searchMusic' v-trigger> 搜 索</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="center_con">
+                    <!-- 搜索列表 -->
+                    <div class="song_wrapper">
+                        <h1 class="title">歌曲列表</h1>
+                        <ul class="song_list">
+                            <li  v-for="item in musiclist">
+                                <!-- <a href="javascript:;" ></a> -->
+                                <button @click='playMusic(item.id)' class="btn-start">
+                                    <!-- <span class="item glyphicon glyphicon-play"></span> -->
+                                    play
+                                </button>
+                                <b class="music-title" @click='playMusic(item.id)'>{{item.name}}</b>
+                                <span v-if='item.mvid!=0'><button @click='playMv(item.mvid)'><a>MV</a></button></span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 歌曲背景容器 -->
+                    <div class="player_com rotate" :class='{palying:isPlaying}'>
+                        <div></div>
+                        <!-- <img href='' class="play_bar"> -->
+                        <img :src='musicCover' class="img-bg rotate">
+                        
+                        
+                    </div>
+                    <!-- 评论区 -->
+                    <div class="comment_wrapper">
+                        <h1 class="title">热门留言</h1>
+                        <div class="comment_list">
+                            <dl v-for='item in hotComments'>
+                                <div class="itemimg"><img :src="item.user.avatarUrl" alt=""></div>
+                                <dt class="itemtitle">{{item.user.nickname}}</dt>
+                                <dd class="itemcomment">{{item.content}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <!-- 音乐播放 -->
+                <div class="audio_con">
+                    <audio ref='audio' @play='play' @pause='pause' :src='musicurl' controls autoplay muted buffered loop ended class="myaudio"></audio>
+                </div>
+                <!-- Mv 播放 -->
+                <div class="video_com" v-show='isShow'>
+                    <video class="video_main" :src="mvUrl" controls autoplay  loop ></video>
+                    <div class="mask" @click='hide'></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <script src="js/bg.js"></script> -->
+    <script src="js/Bubbles.js"></script>
+    <!-- <script language="javascript">
+        // snowStorm.snowColor="#ffffff"; //雪花的颜色
+        // snowStorm.flakesMaxActive=100; //雪花的数量
+        // snowStorm.excludeMobile=false; //ture让iPhone等支持js的手机也能看到雪花
+
+        //  爱心；
+        var MAX=5;
+        var i=0;
+        function Demo(){
+            CreateBubble();
+            if(++i<MAX) setTimeout(Demo,1000);
+        }
+    </script> -->
+    <script src='js/vue.js'></script>
+    <script src="js/axios.min.js"></script>
+    <script src='js/main.js'></script>
+        <!-- 爱心 -->
+    
+
+</body>
+</html>

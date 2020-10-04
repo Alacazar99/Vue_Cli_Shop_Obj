@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 500px;
+            height: 200px;
+            background-color: red;
+            border: 5px solid black;
+            padding: 20px;
+        }
+
+        .son {
+            width: 200px;
+            height: 100px;
+            float: left;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    var report = (function () {
+        var imgs = [];
+        return function (src) {
+            var img = new Image();
+            imgs.push(img);
+            img.src = src;
+        }
+    })()
+
+
+        (function () {
+            //i在外部就不认识啦
+            for (var i = 0; i < count; i++) { }
+        })();
+    console.log(i);//报错，无法访问
+
+</script>

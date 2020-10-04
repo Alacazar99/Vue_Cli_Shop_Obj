@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .cla {
+        position: absolute;
+        flex: auto;
+        transition: opacity;
+    }
+
+    .test {
+        width: 100px;
+        height: 100px;
+        background-color: #eeeeee;
+        padding: 10px 20px 30px;
+
+    }
+</style>
+<style>
+    .classB {
+        color: blue;
+
+    }
+
+    .classA {
+        color: red;
+    }
+
+    .classC {
+        color: green;
+    }
+</style>
+
+
+<body>
+    <span>aaaa</div>
+        <div style="position: relative; top: -20px;">bbbbb</div>
+        <input value='ccc'>
+
+
+    <div class="test">111</div>
+    <p class="classA classB classC">hello</p>
+    <p>hello<q>html</q></p>
+    <div class="cla" style="float:left;">左边</div>
+    <div class="cla" style="float:right;">右边</div>
+</body>
+<script>
+     f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+
+        function f1() {
+            var a = b = c = 9;
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+    // var name = '123';
+    // var obj = {
+    //     name: '456',
+    //     getName: function () {
+    //         function printName() {
+    //             console.log(this.name);
+    //         }
+    //         printName();
+    //     }
+    // }
+    // obj.getName(); //123
+
+    // function foo() {
+    //     foo.a = function () {
+    //         console.log(111)
+    //     }
+    //     this.a = function () {
+    //         console.log(222)
+    //     }
+    // }
+    // foo.prototype.a = function () {
+    //     console.log(333)
+    // }
+    // foo.a = function () {
+    //     console.log(444)
+    // }
+    // foo.a()   // 4
+    // let obj = new foo()
+    // obj.a()   //2
+    // foo.a()   // 1
+
+    // print('lalalakkkk');
+    // console.log('---');
+    // function paddingNum(number) {
+    //     return number.toLocaleString()
+    // }
+    // console.log(paddingNum(1236699.12));
+    // a = ['23', 'kk', '9j']
+    // s = a.join('')
+    // // console.log(s);
+    // for (var i = 0; i < 10; i++) {
+    //     setTimeout(function () {
+    //         console.log(i)
+    //     }, 1000)
+    // }
+    console.log('-----------------')
+    // console.log(typeof Object)
+    // console.log(typeof null)
+
+
+    // console.log(a);   // undefined
+    // var a = 12;
+    // function fn() {
+    //     console.log(a);// 12
+    //     a = 13;
+    // }
+    // fn();
+    // console.log(a)   // 13
+
+    // console.log(a);
+    // a = 12;
+    // function fn() {
+    //     console.log(a);
+    //     a = 13;
+    // }
+
+    // fn();
+    // console.log(a);
+    // var foo = 1;
+
+    // function bar() {
+    //     console.log(foo)
+
+    //     if (!foo) {
+    //         var foo = 10;
+    //     }
+    //     console.log(foo);
+    // }
+
+    // bar();
+
+    // var n = 0;
+
+    // function a() {
+    //     var n = 10;
+    //     function b() {
+    //         n++;
+    //         console.log(n);
+    //     }
+    //     b();  //11
+    //     return b;  //12
+    // }
+
+    // var c = a();
+    // c();   //11
+    // console.log(n);  //0
+
+    //第6题
+    // var a = 10, b = 11, c = 12;
+
+    // function test(c) {
+    //     a = 1; var b = 2; c = 3;
+    // }
+
+    // test(8);
+    // alert(a);  //10
+    // alert(b);   // 11
+    // alert(c);  //3
+    console.log(['1', '2', '3'].map(parseInt))
+    console.log([1, 2, 3, 4, 5, 6, 1].map(parseInt))
+    // if (!("a" in window)) {
+    //      var a = 1;
+    // }
+
+    // console.log(a);
+    // alert(a)
+
+
+    // var a = 4;
+    // function b(x, y, a) {
+    //     alert(a);  
+    //     arguments[2] = 10;
+    //     alert(a);
+    // }
+    // var foo = 'hello';
+
+    // (function (foo) {
+    //     console.log(foo);  // 'hello'
+    //     var foo = foo || 'world';
+    //     console.log(foo);  // 'hello'
+    // })(foo);
+
+    // console.log(foo);
+
+
+    // var a = 9;
+
+    // function fn() {
+    //     a = 0;
+    //     return function (b) { return b + a++; }
+    // }
+
+    // var f = fn()
+    // var m = f(5); 
+    // alert(m);    // 5
+    // var n = fn()(5);   
+    // alert(n);   //5
+    // var x = f(5);  //6
+    // alert(x);
+    console.log(a);  //un
+
+    var a = 12;
+
+    function fn() {
+        console.log(a);  //un
+        var a = 13;
+    }
+
+    fn();
+
+    // console.log(a);
+
+    // a = b(1, 2, 3);  //3 10
+    // alert(a);    // undefined
+
+    // var length = 10;
+    // function fn() {
+    //     return this.length + 1;
+    // }
+    // var obj = {
+    //     length: 5,
+    //     test1: function () {
+    //         return fn();
+    //     }v
+    // };
+    // obj.test2 = fn;
+    //下面代码输出是什么
+    // console.log(obj.test1())       // 11
+    // console.log(fn() === obj.test2())   //false
+    // setTimeout(function () {
+    //     console.log(1)
+    // }, 0)
+    // new Promise(function executor(resolve) {
+    //     console.log(2)
+    //     for (var j = 0; j < 100; j++) {
+    //         j = 99 && resolve()
+    //     }
+    //     console.log(3)
+    // }).then(function () {
+    //     console.log(4)
+    // })
+    // console.log(5)
+
+    // var a = 1;
+    // var obj = {
+    //     a: 2, print: function () { console.log(this.a) }
+    // }
+    // var print = obj.print;
+    // obj.print(); //2        
+    // print();   //1
+
+    // setTimeout(() => console.log(1));
+    // var req = new Promise(resolve => {
+    //     console.log(2);
+    //     resolve();
+    //     console.log(3);
+    // })
+    // req.then(() => console.log(4));
+    // req.then(() => console.log(5));
+
+    // class A {
+    //     start() {
+    //         const x = setTimeout(() => {
+    //             console.log(this);
+    //         }, 0)
+    //         const y = setTimeout(() => {
+    //             console.log(this);
+    //         })
+    //     }
+    // }
+    // const b = new A();
+    // b.start()
+</script>
+
+</html>
