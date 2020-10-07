@@ -125,7 +125,7 @@
     <el-dialog
       title="添加角色"
       :visible.sync="addDialogVisible"
-      width="50%"
+      width="30%"
       @close="addDialogClosed"
     >
       <el-form :model="addForm" ref="addFormRef" label-width="70px">
@@ -145,7 +145,7 @@
 
     
     <!-- 修改角色的对话框 -->
-    <el-dialog title="修改角色" :visible.sync="editDialogVisible"  width="50%" @close="editDialogClosed">
+    <el-dialog title="修改角色" :visible.sync="editDialogVisible"  width="30%" @close="editDialogClosed">
       <el-form :model="editForm"  ref="editFormRef" label-width="70px">
         <el-form-item label="角色名称" prop="roleName">
           <el-input v-model="editForm.roleName" ></el-input>

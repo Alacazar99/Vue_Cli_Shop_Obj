@@ -18,7 +18,7 @@
       </el-row>
 
       <!-- 订单列表数据 -->
-      <el-table :data="orderlist" border stripe>
+      <el-table :data="orderlist" height='600' border stripe>
         <el-table-column type="index"></el-table-column>
         <el-table-column label="订单编号" prop="order_number"></el-table-column>
         <el-table-column label="订单价格" prop="order_price"></el-table-column>
@@ -94,7 +94,7 @@ export default {
       queryInfo: {
         query: '',
         pagenum: 1,
-        pagesize: 9
+        pagesize: 5
       },
       total: 0,
       orderlist: [],

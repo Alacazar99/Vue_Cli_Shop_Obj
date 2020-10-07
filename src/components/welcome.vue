@@ -1,11 +1,7 @@
 <template>
-    <div class="context"> 
-        <strong class="welcome">
-            <!-- Welcome to this System -->
-        </strong>
+    <div class="conment"> 
     </div>
 </template>
-
 <script>
 export default {
     
@@ -14,18 +10,11 @@ export default {
 
 <style lang="less" scoped>
 
-.context{
-    margin-left: 200px;
-    position: absolute;
-    left: 30%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    font-size: 30px;
+.conment{
+    width: 100%;
+    height: 100%;
+    background: url('../assets/img/sz.jpeg') no-repeat;
+    background-size: cover;
 }
 
-.welcome{
-    width: auto;
-    height: auto;
-    // font-size: 20px;
-}
 </style>
